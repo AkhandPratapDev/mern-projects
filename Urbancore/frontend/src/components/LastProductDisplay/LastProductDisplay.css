@@ -1,0 +1,250 @@
+/* ==================== Main Container ==================== */
+.last-product-display {
+  margin: 8% 0 0 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(208px, 1fr));
+  gap: 30px;
+  row-gap: clamp(25px, 5vw, 60px);
+  position: relative;
+}
+
+/* ==================== Poster ==================== */
+.last-product-poster {
+  grid-column: span 2;
+  width: 100%;
+  height: auto;
+  text-align: center;
+}
+
+.last-product-poster img {
+  width: 100%;
+  max-height: 530px;
+  border-radius: .5rem;
+  object-fit: cover;
+  object-position: right;
+}
+
+/* ==================== Load More Button ==================== */
+.load-more-btn {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: clamp(25px, 3.5vw, 40px);
+  height: clamp(25px, 3.5vw, 40px);
+  border: none;
+  border-radius: 50%;
+  background: rgb(0, 0, 0);
+  padding: 0.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transform: translateX(25%) translateY(-25%) scale(1.1);
+  transition: transform 0.2s, background 0.3s;
+}
+
+.load-more-btn:hover {
+  transform: translateX(40%) translateY(-40%) scale(1.1);
+  background: rgb(255, 255, 255);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25),
+    inset 0 1px 2px rgba(255, 255, 255, 0.15);
+}
+
+.load-more-btn:hover img {
+  filter: brightness() invert(1);
+  transition: filter 0.3s;
+}
+
+.load-more-btn img {
+  width: 100%;
+}
+
+/* ==================== Hide Extra Products ==================== */
+.last-product-display>.product-item:nth-child(n+5) {
+  display: none;
+}
+
+/* ==================== Media Queries ==================== */
+@media (max-width: 1289px) {
+  .last-product-display {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .last-product-display>.product-item:nth-child(n+4) {
+    display: none;
+  }
+}
+
+@media (max-width: 1025px) {
+  .last-product-display {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .last-product-display>.product-item:nth-child(n+3) {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .last-product-display {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .last-product-display>.product-item:nth-child(n+4) {
+    display: none;
+  }
+}
+
+@media (max-width: 500px) {
+  .last-product-display {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .last-product-poster {
+    grid-column: auto;
+    order: -1;
+  }
+
+  .last-product-poster img {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+  }
+
+  .last-product-display>.product-item:nth-child(n+3) {
+    display: none;
+  }
+}
+
+/* ==================== Skeleton Items ==================== */
+.skeleton-item {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(208px, 1fr));
+  border-radius: 15px;
+  box-shadow: 0px 0px 10px #00000015;
+  overflow: hidden;
+  background: #fff;
+  width: 100%;
+}
+
+.skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 8px;
+  display: block;
+  width: 100%;
+}
+
+.skeleton-text-content {
+  padding: 10px;
+}
+
+.skeleton-img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 15px 15px 0 0;
+}
+
+.skeleton-text {
+  height: 14px;
+  margin: 10px;
+  border-radius: 4px;
+  width: clamp(60%, 20vw, 90%);
+}
+
+.skeleton-text.short {
+  width: clamp(40%, 15vw, 60%);
+}
+
+.skeleton-price {
+  width: clamp(30px, 12vw, 40%);
+  height: 16px;
+  margin: 10px;
+  border-radius: 4px;
+}
+
+.skeleton-btn {
+  width: clamp(100px, 40vw, 80%);
+  height: 35px;
+  margin: 15px auto 0;
+  border-radius: 8px;
+}
+
+.skeleton-poster {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+}
+
+/* ==================== Skeleton Animation ==================== */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* ==================== Hide Extra Skeletons ==================== */
+.last-product-display>.product-item-skeleton:nth-child(n+5),
+.last-product-display>.product-item:nth-child(n+5) {
+  display: none;
+}
+
+/* ==================== Responsive Skeletons ==================== */
+@media (max-width: 1289px) {
+  .last-product-display {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .last-product-display>.product-item-skeleton:nth-child(n+4),
+  .last-product-display>.product-item:nth-child(n+4) {
+    display: none;
+  }
+}
+
+@media (max-width: 1025px) {
+  .last-product-display {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .last-product-display>.product-item-skeleton:nth-child(n+3),
+  .last-product-display>.product-item:nth-child(n+3) {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .last-product-display {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .last-product-display>.product-item-skeleton:nth-child(n+4),
+  .last-product-display>.product-item:nth-child(n+4) {
+    display: none;
+  }
+}
+
+@media (max-width: 500px) {
+  .last-product-display {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .last-product-poster {
+    grid-column: auto;
+    order: -1;
+  }
+
+  .last-product-display>.product-item-skeleton:nth-child(n+3),
+  .last-product-display>.product-item:nth-child(n+3) {
+    display: none;
+  }
+
+  .last-product-poster img {
+    border-radius: .3rem;
+  }
+}

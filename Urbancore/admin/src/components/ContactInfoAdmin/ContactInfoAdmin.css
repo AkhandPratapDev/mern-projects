@@ -1,0 +1,73 @@
+/* Structure */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(8px, 1vw, 12px);
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Labels match admin style */
+.form-row label {
+  font-size: clamp(0.8rem, 1.2vw, 1rem);
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+/* Inputs use AdminSettings style */
+.contact-form input {
+  width: 100%;
+  padding: clamp(8px, 1.5vw, 10px);
+  border: 1px solid #ccc;
+  border-radius: .4rem;
+  font-size: clamp(0.8rem, 2vw, 1rem);
+  transition: 0.2s ease;
+}
+
+.contact-form input:focus {
+  outline: none;
+  border-color: #181818;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Save button same as .card button */
+.contact-form .save-btn {
+  background: #181818;
+  color: white;
+  padding: clamp(6px, 1.5vw, 8px) clamp(12px, 2vw, 16px);
+  border-radius: clamp(6px, 1vw, 8px);
+  border: none;
+  cursor: pointer;
+  font-size: clamp(0.7rem, 2vw, 1rem);
+  width: 93%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 15px;
+}
+
+.contact-form .save-btn:hover {
+  background: var(--color-primary-hover, #000);
+}
+
+
+
+/* Loading text */
+.loading {
+  grid-column: span 2;
+  text-align: center;
+  color: #555;
+  font-size: 1rem;
+  margin-top: 50px;
+}
+
+@media (max-width:500px) {
+  .contact-form input {
+    border-radius: .2rem;
+  }
+}

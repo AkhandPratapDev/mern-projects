@@ -1,0 +1,124 @@
+/* =============== Section Title =============== */
+.product-display h2 {
+  font-size: clamp(18px, 2vw, 28px);
+  font-weight: 600;
+}
+
+/* =============== Product Grid List =============== */
+.product-display-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(208px, 1fr));
+  margin-top: 30px;
+  gap: 30px;
+  row-gap: clamp(25px, 5vw, 60px);
+}
+
+/* =============== Poster Styling =============== */
+.product-poster {
+  grid-column: 1 / -1;
+  /* make poster span across all grid columns */
+  width: 100%;
+  text-align: center;
+}
+
+.product-poster img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* =============== Responsive: Tablet =============== */
+@media (max-width: 767px) {
+  .product-display-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .product-poster img {
+    height: 32vw;
+  }
+}
+
+/* =============== Responsive: Mobile =============== */
+@media (max-width: 500px) {
+  .product-display-list {
+    grid-template-columns: repeat(auto-fit, minmax(calc(50% - 15px), 1fr));
+    gap: 20px;
+  }
+
+  .product-poster img {
+    height: 35vw;
+    border-radius: .3rem;
+  }
+}
+
+/* =============== Skeleton Item Container =============== */
+.skeleton-item {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(208px, 1fr));
+  border-radius: 15px;
+  box-shadow: 0px 0px 10px #00000015;
+  overflow: hidden;
+  background: #fff;
+  width: 100%;
+}
+
+/* =============== Skeleton Shimmer Effect =============== */
+.skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 8px;
+  display: block;
+  width: 100%;
+}
+
+/* =============== Skeleton Text Content Padding =============== */
+.skeleton-text-content {
+  padding: 10px;
+}
+
+/* =============== Skeleton Image Placeholder =============== */
+.product-display .skeleton-img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: .5rem .5rem 0 0;
+}
+
+/* =============== Skeleton Text Placeholder =============== */
+.product-display .skeleton-text {
+  height: 14px;
+  margin: 10px;
+  border-radius: 4px;
+  width: clamp(60%, 20vw, 90%);
+}
+
+.product-display .skeleton-text.short {
+  width: clamp(40%, 15vw, 60%);
+}
+
+/* =============== Skeleton Price Placeholder =============== */
+.product-display .skeleton-price {
+  width: clamp(30px, 12vw, 40%);
+  height: 16px;
+  margin: 10px;
+  border-radius: 4px;
+}
+
+/* =============== Skeleton Button Placeholder =============== */
+.product-display .skeleton-btn {
+  width: clamp(100px, 40vw, 80%);
+  height: 35px;
+  margin: 15px auto 0;
+  border-radius: 8px;
+}
+
+/* =============== Shimmer Animation =============== */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
+}

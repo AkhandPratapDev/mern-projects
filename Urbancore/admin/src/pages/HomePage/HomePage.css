@@ -1,0 +1,94 @@
+/* ==================== Homepage Container ==================== */
+.homepage {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(15px, 3vw, 30px);
+  justify-content: center;
+}
+
+/* ==================== Dashed Border for Posters ==================== */
+.border {
+  border: 2px dashed #b1b1b1;
+  border-radius: 0.5rem;
+}
+
+/* ==================== Section Titles ==================== */
+.homepage h3 {
+  font-size: clamp(15px, 2vw, 25px);
+}
+
+.homepage h3 span {
+  font-size: clamp(10px, 1.5vw, 20px);
+  color: rgba(130, 129, 129, 0.697);
+}
+
+/* ==================== Header Images Container ==================== */
+.header-images {
+  display: flex;
+  gap: clamp(8px, 2vw, 15px);
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding-bottom: 5px;
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+  justify-content: space-between;
+}
+
+/* Hide scrollbar for Webkit browsers */
+.header-images::-webkit-scrollbar {
+  display: none;
+}
+
+/* ==================== Header Images ==================== */
+.header-images img {
+  flex: 0 0 auto;
+  width: clamp(180px, 30%, 405px);
+  height: auto;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  border: 2px dashed #cecece;
+}
+
+.header-images img:hover {
+  transform: scale(0.953);
+}
+
+/* ==================== Homepage Poster ==================== */
+.homepage-poster img {
+  width: clamp(280px, 95%, 1235px);
+  height: auto;
+  border-radius: 0.5rem;
+  display: block;
+  margin: 0 auto;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  border: 2px dashed gray;
+}
+
+.homepage-poster img:hover {
+  transform: scale(1.02);
+}
+
+/* ==================== Responsive ==================== */
+@media (max-width: 768px) {
+  .header-images {
+    gap: 8px;
+    justify-content: start;
+    border-radius: .3rem;
+  }
+
+  .header-images img {
+    width: clamp(240px, 45%, 300px);
+    border-radius: .3rem;
+
+  }
+
+  .homepage-poster img {
+    width: clamp(220px, 90%, 500px);
+    border-radius: .3rem;
+
+  }
+}

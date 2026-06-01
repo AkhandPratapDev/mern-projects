@@ -1,0 +1,40 @@
+/* ==================== Review Section ==================== */
+
+.review {
+  margin-top: 4%;
+}
+
+/* ==================== Review Card ==================== */
+.review-card {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  min-width: 260px;
+  background: #fff;
+  border-radius: 10px;
+  padding: 0px 18px 20px 18px;
+}
+
+.review-card h3 {
+  font-size: clamp(1.4rem, 2vw + 1rem, 2.1rem);
+  color: #000000;
+}
+
+/* ==================== Star Ratings ==================== */
+.stars {
+  font-size: clamp(1.8rem, 4vw, 3.2rem);
+  margin-bottom: 10px;
+}
+
+.stars .filled {
+  color: gold;
+  cursor: pointer;
+}
+
+/* ==================== Rate Us Text ==================== */
+.rate-us p {
+  font-size: clamp(0.8rem, 1vw + 0.5rem, 1rem);
+  color: #555;
+  line-height: 1.5;
+  text-align: center;
+}

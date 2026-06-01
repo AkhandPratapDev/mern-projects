@@ -1,0 +1,106 @@
+/* ==================== Card Container ==================== */
+
+.user-card {
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    background-color: #fff;
+    padding: clamp(10px, 2vw, 16px);
+    margin-bottom: clamp(10px, 2vw, 16px);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease-in-out;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: clamp(10px, 2vw, 30px);
+}
+
+.user-card:hover {
+    transform: translateY(-2px);
+}
+
+.user-image img {
+    /* ==================== User Image ==================== */
+    width: clamp(50px, 15vw, 100px);
+    height: auto;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.user-card-container {
+    /* ==================== User Info Container ==================== */
+    display: flex;
+    align-items: center;
+    gap: clamp(10px, 2vw, 30px);
+    flex-wrap: wrap;
+}
+
+.user-card-info {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(2px, 1vw, 4px);
+}
+
+.user-card-name {
+    font-size: clamp(0.9rem, 2vw, 1rem);
+    font-weight: 600;
+}
+
+.user-card-email {
+    font-size: clamp(0.8rem, 1.8vw, 0.9rem);
+    color: #555;
+}
+
+.user-card-address {
+    font-size: clamp(0.65rem, 1.5vw, 0.85rem);
+    color: #777;
+}
+
+.user-card-action-btns {
+    /* ==================== Action Buttons ==================== */
+    display: flex;
+    flex-wrap: wrap;
+    gap: clamp(5px, 1vw, 10px);
+    margin-top: clamp(5px, 1vw, 0);
+}
+
+.user-card-action-btns button {
+    padding: clamp(4px, 1vw, 6px) clamp(10px, 2vw, 14px);
+    background: #000000;
+    font-size: clamp(12px, 2vw, 15px);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.user-card-action-btns button:hover {
+    background: #e63946;
+}
+
+button.user-orders:hover {
+    background: var(--color-primary-hover);
+}
+
+/* ==================== Responsive ==================== */
+@media (max-width: 500px) {
+    .user-card {
+        flex-direction: column;
+        align-items: center;
+        border-radius: .3rem;
+    }
+
+    .user-card-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .user-card-info {
+        align-items: center;
+    }
+
+    .user-card-action-btns {
+        width: 100%;
+        justify-content: center;
+    }
+}

@@ -1,0 +1,14 @@
+.shop-product {
+  margin-top: 100px;
+}
+
+.search-resp {
+  display: none;
+}
+
+
+@media (max-width:1025px) {
+  .search-resp {
+    display: block;
+  }
+}

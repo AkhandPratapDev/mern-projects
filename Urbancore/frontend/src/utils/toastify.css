@@ -1,0 +1,72 @@
+/*  Toast container base */
+.custom-toast {
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  position: relative !important;
+  overflow: hidden;
+}
+
+/*  Close button positioned absolutely to the far right */
+.toastify .toast-close {
+  color: #e5e7eb !important;
+  font-size: 16px !important;
+  opacity: 0.6 !important;
+  transition: all 0.2s ease-in-out;
+  margin: 0 !important;
+  padding: 0 !important;
+  padding-left: 20px !important;
+}
+
+.toastify .toast-close:hover {
+  opacity: 1 !important;
+  color: #ffffff !important;
+}
+
+/*  Default Toastify position adjustments (desktop) */
+.toastify {
+  right: 20px !important;
+  left: auto !important;
+  border-radius: .3rem !important;
+  font-size: 14px !important;
+}
+
+/*  Center + responsive layout on mobile */
+@media (max-width: 500px) {
+  .toastify .toast-close {
+    position: absolute !important;
+    right: 12px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+
+  }
+
+  .toastify {
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    right: auto !important;
+    width: calc(100% - 40px) !important;
+    max-width: 360px !important;
+    border-radius: .2rem !important;
+  }
+
+  .custom-toast {
+    font-size: 15px !important;
+    padding-right: 44px !important;
+  }
+}
+
+/*  Smooth entrance animation */
+.toastify {
+  animation: slideDown 0.4s ease forwards;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

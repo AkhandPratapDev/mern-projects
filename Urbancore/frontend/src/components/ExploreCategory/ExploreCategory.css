@@ -1,0 +1,129 @@
+/* =========================== Explore Category Container =========================== */
+.explore-category {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: 2% auto;
+}
+
+/* =========================== Category List Wrapper =========================== */
+.explore-category-list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    text-align: center;
+    margin: 40px 0;
+    overflow-x: scroll;
+
+    /* Hide scrollbar */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.explore-category-list::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari, Opera */
+}
+
+/* =========================== Category Images =========================== */
+.explore-category-list img {
+    width: 8.5vw;
+    min-width: 80px;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    transition: 0.2s;
+}
+
+.explore-category-list-item {
+    transition: .2s;
+}
+
+/* Active category border */
+.explore-category-list-item .active {
+    border: 3px solid var(--color-text-primary);
+}
+
+/* =========================== Category Names =========================== */
+.explore-category-list p {
+    margin-top: 10px;
+    color: var(--color-text-primary);
+    font-size: clamp(12px, 2vw, 16px);
+    cursor: pointer;
+}
+
+/* =========================== Skeleton Loader Styles =========================== */
+.explore-category .skeleton {
+    background-color: var(--color-search-bg);
+    animation: pulse 1.5s infinite ease-in-out;
+}
+
+@keyframes pulse {
+    0% {
+        background-color: var(--color-search-bg);
+    }
+
+    50% {
+        background-color: var(--color-white);
+    }
+
+    100% {
+        background-color: var(--color-search-bg);
+    }
+}
+
+/* Skeleton Image */
+.explore-category .skeleton-img {
+    width: 8.5vw;
+    min-width: 80px;
+    height: 80px;
+    border-radius: 0.5rem;
+}
+
+/* Skeleton Text */
+.explore-category .skeleton-text {
+    height: 14px;
+    width: 70%;
+    margin: 6px auto 0;
+    border-radius: 4px;
+}
+
+/* Short Skeleton Text Variant */
+.explore-category .skeleton-text.short {
+    width: 95%;
+}
+
+/* =========================== Responsive Styles =========================== */
+@media (max-width: 1025px) {
+    .explore-category {
+        margin: 1% auto;
+    }
+
+    .explore-category-list {
+        margin: 25px 0;
+    }
+}
+
+@media (max-width: 500px) {
+    .explore-category-list img {
+        min-width: 53px;
+        border-radius: 0.3rem;
+
+    }
+
+    .explore-category-list {
+        gap: 20px;
+    }
+
+    .skeleton-img {
+        min-width: 53px;
+        height: 53px;
+        border-radius: 0.5rem;
+    }
+
+    .explore-category-list-item .active {
+        border: 1.5px solid var(--color-text-primary);
+    }
+}

@@ -1,0 +1,194 @@
+/* =========================== Overlay Background =========================== */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--color-overlay-dark);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  backdrop-filter: blur(6px);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* =========================== Popup Container =========================== */
+.popup-container {
+  background: var(--color-white);
+  border-radius: .5rem;
+  width: clamp(320px, 80%, 700px);
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  animation: slideUp 0.3s ease-in-out;
+  overflow: hidden;
+}
+
+/* =========================== Close Button =========================== */
+.popup-close {
+  position: absolute;
+  top: clamp(8px, 1.5vw, 16px);
+  right: clamp(10px, 2vw, 20px);
+  background: transparent;
+  border: none;
+  font-size: clamp(16px, 2vw, 22px);
+  font-weight: bold;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition: 0.2s;
+  z-index: 10;
+}
+
+.popup-close:hover {
+  color: var(--color-danger);
+  transform: rotate(90deg);
+}
+
+/* =========================== Content Layout =========================== */
+.popup-content {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+
+/* =========================== Left Section (Form) =========================== */
+.popup-form-section {
+  flex: 1;
+  padding: clamp(20px, 3vw, 40px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.popup-form-section h2 {
+  margin-bottom: clamp(14px, 2vw, 24px);
+  font-size: clamp(18px, 2.5vw, 26px);
+  text-align: center;
+  color: var(--color-text-primary);
+  font-weight: 600;
+}
+
+.popup-form {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(10px, 1.5vw, 18px);
+}
+
+.popup-form input,
+.popup-form textarea {
+  padding: clamp(10px, 1.5vw, 14px);
+  border: 1px solid var(--color-border);
+  border-radius: .5rem;
+  outline: none;
+  font-size: clamp(14px, 1.5vw, 16px);
+  transition: border 0.2s, box-shadow 0.2s;
+  background: var(--color-search-bg);
+}
+
+.popup-form input:focus,
+.popup-form textarea:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 6px rgba(0, 115, 230, 0.3);
+  background: var(--color-white);
+}
+
+.popup-form textarea {
+  resize: vertical;
+  min-height: clamp(80px, 12vw, 120px);
+}
+
+/* =========================== Submit Button =========================== */
+.submit-btn {
+  padding: clamp(10px, 1.5vw, 14px);
+  background: linear-gradient(135deg, #0073e6, #005bb5);
+  border: none;
+  border-radius: .5rem;
+  color: var(--color-white);
+  font-size: clamp(15px, 1.5vw, 18px);
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.1s;
+}
+
+.submit-btn:hover {
+  background: linear-gradient(135deg, #005bb5, var(--color-primary-dark));
+}
+
+.submit-btn:active {
+  transform: scale(0.97);
+}
+
+/* =========================== Right Section (Image) =========================== */
+.popup-image-section {
+  flex: 1;
+  background: #f0f6ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: clamp(15px, 2vw, 30px);
+}
+
+.popup-image-section img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* =========================== Thank You Message =========================== */
+.thank-you {
+  text-align: center;
+  font-size: clamp(16px, 1.5vw, 20px);
+  font-weight: 500;
+  color: var(--color-success);
+  padding: clamp(15px, 2vw, 25px) 0;
+}
+
+/* =========================== Animations =========================== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* =========================== Mobile Responsive =========================== */
+@media (max-width: 650px) {
+  .popup-content {
+    flex-direction: column;
+  }
+
+  .popup-image-section {
+    order: -1;
+    padding: clamp(10px, 3vw, 20px);
+    display: none;
+  }
+
+  .popup-container {
+    border-radius: .3rem;
+  }
+
+  .submit-btn {
+    border-radius: .3rem;
+  }
+
+  .popup-form input,
+  .popup-form textarea {
+    border-radius: .3rem;
+  }
+}

@@ -1,0 +1,9 @@
+@media (max-width:800px) {
+    .search-resp {
+        display: block;
+    }
+
+    .product-management .page-title {
+        display: none;
+    }
+}

@@ -1,0 +1,40 @@
+/* ==================== Offer Product List Container ==================== */
+.offer-product-display-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(208px, 1fr));
+  margin-top: 6%;
+  gap: 30px;
+  row-gap: clamp(25px, 5vw, 60px);
+}
+
+/* ==================== Offer Poster ==================== */
+.offer-poster {
+  width: 100%;
+  text-align: center;
+}
+
+.offer-poster img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* ==================== Responsive: Tablet ==================== */
+@media (max-width: 767px) {
+  .offer-product-display-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* ==================== Responsive: Mobile ==================== */
+@media (max-width: 500px) {
+  .offer-product-display-list {
+    grid-template-columns: repeat(auto-fit, minmax(calc(50% - 15px), 1fr));
+    gap: 20px;
+  }
+
+  .offer-poster img {
+    height: 45vw;
+    border-radius: .3rem;
+  }
+}

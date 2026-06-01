@@ -1,0 +1,157 @@
+/* ==================== Main Container ==================== */
+.messages-container {
+  overflow-x: auto;
+  font-size: clamp(0.7rem, 1vw, 1rem);
+  line-height: 1.5;
+}
+
+/* ==================== Section Heading ==================== */
+.messages-container h2 {
+  margin-bottom: clamp(10px, 2vw, 20px);
+}
+
+/* ==================== Messages Table ==================== */
+.messages-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: clamp(6px, 1vw, 12px);
+  overflow: hidden;
+  box-shadow: 0 0 clamp(8px, 1vw, 14px) rgba(0, 0, 0, 0.05);
+}
+
+/* ==================== Table Cells & Headings ==================== */
+.messages-table th,
+.messages-table td {
+  border: 1px solid #ddd;
+  padding: clamp(6px, 1vw, 12px);
+  text-align: left;
+  white-space: nowrap;
+  font-size: clamp(0.75rem, 0.9vw, 0.95rem);
+}
+
+/* ==================== Table Head Styling ==================== */
+.messages-table th {
+  background-color: #f4f4f4;
+  font-weight: 600;
+  font-size: clamp(0.8rem, 1vw, 1rem);
+}
+
+/* ==================== Action Buttons Base ==================== */
+.delete-btn,
+.mark-read-btn {
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  border-radius: clamp(4px, 0.5vw, 6px);
+  padding: clamp(4px, 0.6vw, 8px) clamp(8px, 1vw, 12px);
+  transition: all 0.3s ease;
+  font-size: clamp(0.75rem, 1vw, 0.9rem);
+}
+
+/* ==================== Delete Button ==================== */
+.delete-btn {
+  background: red;
+}
+
+.delete-btn:hover {
+  background: darkred;
+}
+
+/* ==================== Mark as Read Button ==================== */
+.mark-read-btn {
+  background: rgb(54, 185, 2);
+  margin-right: clamp(8px, 2vw, 16px);
+}
+
+.mark-read-btn:hover {
+  background: rgb(34, 119, 0);
+}
+
+/* ==================== Responsive (Tablet & Mobile) ==================== */
+@media (max-width: 768px) {
+
+  .messages-table,
+  .messages-table thead,
+  .messages-table tbody,
+  .messages-table th,
+  .messages-table td,
+  .messages-table tr {
+    display: block;
+    width: 100%;
+  }
+
+  /* Hide table header for mobile layout */
+  .messages-table thead {
+    display: none;
+  }
+
+  /* Each row becomes a card */
+  .messages-table tr {
+    margin-bottom: clamp(10px, 3vw, 20px);
+    border: 1px solid #ddd;
+    border-radius: clamp(6px, 1vw, 10px);
+    background: #fff;
+    box-shadow: 0 2px clamp(6px, 1vw, 12px) rgba(0, 0, 0, 0.05);
+    padding: clamp(8px, 2vw, 14px);
+  }
+
+  /* Cell styling for stacked layout */
+  .messages-table td {
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: clamp(6px, 2vw, 10px);
+    font-size: clamp(0.6rem, 1.2vw, 1rem);
+    text-align: right;
+    white-space: normal;
+    word-break: break-word;
+  }
+
+  /* Display labels above cell values */
+  .messages-table td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    text-transform: capitalize;
+    color: #333;
+    flex: 1;
+    text-align: left;
+    font-size: clamp(0.7rem, 1.2vw, 1rem);
+  }
+
+  /* Responsive button adjustments */
+  .delete-btn,
+  .mark-read-btn {
+    width: 100%;
+    margin-top: clamp(4px, 1vw, 8px);
+    padding: clamp(8px, 2vw, 12px);
+    font-size: clamp(0.7rem, 1vw, 1rem);
+  }
+}
+
+/* ==================== Responsive (Large Screens) ==================== */
+@media (min-width: 1200px) {
+
+  .messages-table th,
+  .messages-table td {
+    font-size: clamp(0.9rem, 0.8vw, 1rem);
+    padding: clamp(10px, 0.8vw, 16px);
+  }
+
+  .messages-container {
+    margin: 0 auto;
+  }
+}
+
+
+.email-link {
+  color: #007bff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.email-link:hover {
+  text-decoration: underline;
+  color: #0056b3;
+}

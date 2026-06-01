@@ -1,0 +1,266 @@
+/* ==================== Container Layout ==================== */
+.earnings-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: clamp(20px, 4vw, 70px) auto;
+  transition: all 0.3s ease;
+  border-radius: 0.5rem;
+}
+
+/* ==================== Main Grid ==================== */
+.earnings-content {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  padding: 16px;
+  background: #f7f5f5;
+  border-radius: 0.5rem;
+}
+
+/* ==================== Card Base ==================== */
+.earnings-container .card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  padding: 16px;
+  transition: transform 0.2s;
+  height: 230px;
+}
+
+
+
+/* ==================== Earnings Card ==================== */
+.earning-card {
+  text-align: center;
+}
+
+.earning-image {
+  width: clamp(60px, 8vw, 200px);
+}
+
+.earning-amount {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #28a745;
+}
+
+/* ==================== Activity Card ==================== */
+.activity-item {
+  margin-bottom: 12px;
+}
+
+.activity-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.activity-header span {
+  font-size: 12px;
+}
+
+.activity-item-percentage-value {
+  color: rgb(0, 81, 255);
+}
+
+.progress {
+  background: #f0f0f0;
+  border-radius: 6px;
+  height: 5px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.progress-bar {
+  background: #007bff;
+  height: 100%;
+  border-radius: 6px;
+  transition: width 0.3s ease;
+}
+
+/* ==================== Card Header ==================== */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.arrow-icon {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+/* ==================== User Card Adjustments ==================== */
+.earnings-container .user-card-action-btns {
+  display: none;
+}
+
+.earnings-container .user-card {
+  margin-bottom: clamp(10px, 1vw, 16px);
+}
+
+.earnings-container .user-card-container {
+  flex-wrap: nowrap;
+  gap: clamp(8px, 1vw, 30px);
+}
+
+.earnings-container .user-image img {
+  width: clamp(30px, 2.5vw, 60px);
+}
+
+.earnings-container .card h4 {
+  font-size: clamp(12px, 1.5vw, 20px);
+}
+
+.earnings-container .card h3 {
+  margin-bottom: 0;
+}
+
+.earnings-container .user-card-name {
+  font-size: clamp(14px, 1.2vw, 18px);
+}
+
+.earnings-container .user-card-email {
+  font-size: clamp(11px, 1vw, 13px);
+}
+
+.earnings-container .user-card {
+  padding: clamp(5px, 0.6vw, 12px);
+}
+
+/* ==================== Rating Card ==================== */
+.rating-card {
+  text-align: center;
+}
+
+.rating-card p {
+  font-weight: 500;
+  color: #555;
+}
+
+.rating-stars {
+  display: flex;
+  justify-content: center;
+  gap: clamp(4px, 0.5vw, 8px);
+  margin: clamp(6px, 1vw, 12px) 0;
+}
+
+.rating-card .star {
+  font-size: clamp(20px, 3vw, 42px);
+  color: #ccc;
+  position: relative;
+}
+
+.rating-card .star.filled {
+  color: #f5c518;
+}
+
+.rating-card .star.half {
+  color: #ccc;
+}
+
+.rating-card .star.half::before {
+  content: "★";
+  color: #f5c518;
+  position: absolute;
+  left: 0;
+  width: 50%;
+  overflow: hidden;
+}
+
+.rating-card .rating-text {
+  font-size: clamp(14px, 1.2vw, 16px);
+  color: #555;
+  margin-top: clamp(4px, 0.8vw, 8px);
+}
+
+/* ==================== Responsive (Max: 950px) ==================== */
+@media (max-width: 950px) {
+  .earnings-container .user-card-name {
+    font-size: clamp(10px, 1.2vw, 18px);
+  }
+
+  .earnings-container .user-card-email {
+    font-size: clamp(8px, 1vw, 13px);
+  }
+
+  .activity-header span {
+    font-size: 9px;
+  }
+
+  .earnings-container .card {
+    height: 200px;
+  }
+
+  .arrow-icon {
+    width: 15px;
+    height: 15px;
+  }
+}
+
+/* ==================== Responsive (Max: 850px) ==================== */
+@media (max-width: 850px) {
+  .earnings-content {
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .earnings-content::-webkit-scrollbar {
+    display: none;
+  }
+
+  .earning-card {
+    width: 250px;
+  }
+
+  .activity-card {
+    width: 300px;
+  }
+
+  .earnings-container .user-card-container {
+    flex-direction: row;
+  }
+
+  .earnings-container .user-card-name {
+    font-size: clamp(10px, 1.2vw, 18px);
+  }
+
+  .earnings-container .user-card-email {
+    font-size: clamp(8px, 1vw, 13px);
+  }
+
+  .users-card {
+    width: 240px;
+  }
+
+  .earnings-content {
+    padding: 0;
+    background: transparent;
+  }
+
+  .earnings-container .card {
+    border: 1px solid #e5e7eb;
+  }
+}
+
+/* ==================== Responsive (Max: 440px) ==================== */
+@media (max-width: 440px) {
+  .earnings-container .card {
+    height: 180px;
+  }
+
+  .activity-card {
+    width: 240px;
+  }
+
+  .users-card {
+    width: 240px;
+  }
+
+  .progress {
+    height: 3px;
+  }
+}

@@ -1,0 +1,117 @@
+/* ==================== Dashboard Container ==================== */
+.dashboard {
+  display: flex;
+  gap: 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* ==================== Admin Activity Section ==================== */
+.admin-activity-dashboard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ==================== Admin Name Section ==================== */
+.admin-name-dashboard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.admin-name-dashboard h2 {
+  font-size: clamp(18px, 2vw, 25px);
+}
+
+.admin-name-dashboard img,
+.admin-activity-dashboard img {
+  width: clamp(16px, 2vw, 25px);
+}
+
+/* ==================== Product Cards Display ==================== */
+.product-cards-display {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(208px, 1fr));
+  justify-content: space-between;
+  gap: clamp(15px, 2vw, 30px);
+  margin-top: clamp(12px, 4vw, 30px);
+  row-gap: clamp(25px, 5vw, 60px);
+}
+
+.dashboard-left {
+  flex: 2;
+  min-width: 300px;
+}
+
+.product-cards {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.product-card {
+  background: #fff;
+  padding: 15px;
+  border-radius: 12px;
+  text-align: center;
+  flex: 1;
+  min-width: 200px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-card img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.price {
+  color: #0070f3;
+  font-weight: bold;
+}
+
+/* ==================== Transaction History Table ==================== */
+.transaction-history {
+  margin-top: 20px;
+}
+
+.transaction-history table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.transaction-history th,
+.transaction-history td {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+}
+
+/* ==================== Responsive: Small Screens ==================== */
+@media (max-width: 450px) {
+  .dashboard {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .dashboard-left {
+    flex: 1;
+    width: 100%;
+    min-width: auto;
+  }
+}
+
+/* ==================== Responsive: Medium Screens ==================== */
+@media (max-width: 900px) {
+  .dashboard {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .dashboard-left {
+    flex: 1;
+  }
+
+  .product-cards-display {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  }
+}

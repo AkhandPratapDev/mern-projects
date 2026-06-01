@@ -1,0 +1,7 @@
+.offers-display-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(208px, 1fr));
+    margin-top: 30px;
+    gap: 30px;
+    row-gap: clamp(25px, 5vw, 60px);
+}

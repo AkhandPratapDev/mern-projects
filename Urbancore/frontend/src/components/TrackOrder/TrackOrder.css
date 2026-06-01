@@ -1,0 +1,182 @@
+/* ==================== TrackOrder Page Container ==================== */
+.track-order-page {
+  max-width: 1000px;
+  margin: clamp(20px, 5%, 40px) auto;
+  padding: clamp(12px, 2vw, 20px);
+  background-color: #f8f8f8;
+  border-radius: .5rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-top: 130px;
+}
+
+/* ==================== Back Button ==================== */
+.back-btn {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background: none;
+  transition: 0.3s;
+}
+
+.back-btn img {
+  width: 30px;
+}
+
+.back-btn img:hover {
+  filter: invert(11%) sepia(100%) saturate(7485%) hue-rotate(0deg) brightness(95%) contrast(110%);
+}
+
+/* ==================== Page Title ==================== */
+.trcking-order-h2 {
+  text-align: center;
+  margin-bottom: clamp(20px, 4vw, 30px);
+  color: #333;
+  font-size: clamp(1.2rem, 2.5vw, 2rem);
+}
+
+/* ==================== Progress Bar ==================== */
+.progress-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: clamp(20px, 4vw, 30px);
+  position: relative;
+}
+
+.progress-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  position: relative;
+}
+
+.progress-step .circle {
+  width: clamp(25px, 5vw, 35px);
+  height: clamp(25px, 5vw, 35px);
+  border-radius: 50%;
+  background-color: #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #555;
+  z-index: 1;
+  font-size: clamp(0.8rem, 1.5vw, 1rem);
+}
+
+.progress-step .circle.active {
+  background-color: #28a745;
+  color: white;
+}
+
+.progress-step .label {
+  margin-top: clamp(5px, 1vw, 8px);
+  font-size: clamp(0.75rem, 1.3vw, 0.875rem);
+  text-align: center;
+  color: #555;
+}
+
+.progress-step .label.active {
+  font-weight: bold;
+  color: #28a745;
+}
+
+.progress-step .line {
+  position: absolute;
+  top: clamp(12px, 2vw, 17px);
+  left: 50%;
+  width: 100%;
+  height: 4px;
+  background-color: #ddd;
+  z-index: 0;
+}
+
+.progress-step .line.filled {
+  background-color: #28a745;
+}
+
+/* ==================== Order Details ==================== */
+.order-details {
+  background-color: #fff;
+  padding: clamp(14px, 2vw, 20px);
+  border-radius: .5rem;
+}
+
+.order-details p {
+  margin: clamp(6px, 1vw, 8px) 0;
+  font-size: clamp(0.85rem, 1.5vw, 1rem);
+  color: #333;
+}
+
+/* ==================== Order Items ==================== */
+.order-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(10px, 2vw, 15px);
+  margin-top: clamp(10px, 2vw, 15px);
+}
+
+.order-item-card {
+  background-color: #f1f1f1;
+  padding: clamp(8px, 1.5vw, 10px);
+  border-radius: .5rem;
+  flex: 1 1 clamp(180px, 30%, 200px);
+  display: flex;
+  gap: clamp(8px, 1.5vw, 10px);
+  align-items: center;
+  transition: 0.3s;
+}
+
+.order-item-card:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.order-item-img {
+  width: clamp(65px, 9.5vw, 90px);
+  height: clamp(65px, 9.5vw, 90px);
+  object-fit: cover;
+  border-radius: .3rem;
+  cursor: pointer;
+}
+
+.order-item-details h5 {
+  margin: 0 0 clamp(4px, 1vw, 5px) 0;
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
+  color: #333;
+}
+
+.order-item-details p {
+  margin: 2px 0;
+  font-size: clamp(0.8rem, 1.2vw, 0.875rem);
+  color: #555;
+}
+
+/* ==================== Responsive Adjustments ==================== */
+@media screen and (max-width: 1025px) {
+  .track-order-page {
+    margin-top: 100px;
+  }
+
+}
+
+@media screen and (max-width: 768px) {
+  .order-items {
+    flex-direction: column;
+  }
+
+  .order-item-card {
+    flex: 1 1 100%;
+  }
+
+  .track-order-page {
+    border-radius: .3rem;
+  }
+
+  .order-details {
+    border-radius: .3rem;
+  }
+
+  .order-item-card {
+    border-radius: .3rem;
+  }
+}

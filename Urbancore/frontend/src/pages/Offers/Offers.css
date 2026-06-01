@@ -1,0 +1,9 @@
+.offer-product {
+    margin-top: 130px;
+}
+
+@media (max-width:1225px) {
+    .offer-product {
+        margin-top: 100px;
+    }
+}

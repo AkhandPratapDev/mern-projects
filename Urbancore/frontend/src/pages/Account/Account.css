@@ -1,0 +1,473 @@
+/* ======================= General Layout ======================= */
+.account-page {
+  max-width: 1000px;
+  margin: clamp(3%, 5%, 6%) auto;
+  padding: clamp(12px, 2vw, 20px);
+  font-family: 'Segoe UI', sans-serif;
+  background: #f6f5f5;
+  margin: clamp(90px, 10vw, 100px) auto;
+  margin-top: 130px;
+  border-radius: .5rem;
+}
+
+/* ======================= Profile Header ======================= */
+.account-header {
+  display: flex;
+  align-items: center;
+  gap: clamp(0.8rem, 2vw, 1.5rem);
+  padding: clamp(14px, 2vw, 20px);
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  margin-bottom: clamp(1rem, 2vw, 2rem);
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.avatar-wrapper {
+  position: relative;
+  width: clamp(70px, 10vw, 100px);
+  height: clamp(70px, 10vw, 100px);
+}
+
+.avatar-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ddd;
+}
+
+.avatar-edit-btn {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: #111;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  padding: clamp(4px, 0.8vw, 6px);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s;
+
+}
+
+.avatar-edit-btn:hover {
+  background: #333;
+}
+
+.ac-edit-btn img {
+  width: 13px;
+  filter: invert(1);
+}
+
+.pencil-icon {
+  width: clamp(12px, 1.5vw, 14px);
+  height: clamp(12px, 1.5vw, 14px);
+  filter: invert(1);
+}
+
+.person-info {
+  display: flex;
+  justify-content: space-between;
+  width: 84%;
+  align-items: center;
+}
+
+.personal-info-btns {
+  display: flex;
+}
+
+.account-header input[type="text"],
+.account-header input[type="email"] {
+  display: block;
+  width: 100%;
+  max-width: 250px;
+  padding: clamp(6px, 1vw, 8px) clamp(10px, 1.5vw, 12px);
+  margin: 6px 0;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: clamp(0.85rem, 1.5vw, 0.95rem);
+}
+
+.account-header button {
+  margin-right: 8px;
+  padding: clamp(6px, 1vw, 8px) clamp(12px, 1.5vw, 14px);
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: clamp(0.85rem, 1.5vw, 0.9rem);
+  background: #000;
+  color: #fff;
+  transition: background 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.account-header button:hover {
+  opacity: 0.85;
+}
+
+/* ======================= Avatar Modal ======================= */
+.avatar-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(20, 20, 20, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3000;
+}
+
+.avatar-modal-content {
+  background: #fff;
+  padding: clamp(16px, 2vw, 25px);
+  border-radius: 12px;
+  text-align: center;
+  max-width: 450px;
+  width: 90%;
+}
+
+.avatar-options {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: clamp(0.5rem, 2vw, 1rem);
+  margin: clamp(0.5rem, 2vw, 1rem) 0;
+}
+
+.avatar-choice {
+  width: clamp(55px, 8vw, 70px);
+  height: clamp(55px, 8vw, 70px);
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: transform 0.2s, border 0.2s;
+}
+
+.avatar-choice:hover {
+  transform: scale(1.1);
+}
+
+.avatar-choice.selected {
+  border: 2px solid #111;
+}
+
+.close-btn {
+  margin-top: 10px;
+  padding: clamp(6px, 1vw, 8px) clamp(10px, 1.5vw, 14px);
+  border: none;
+  border-radius: 6px;
+  background: #111;
+  color: #fff;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  background: #333;
+}
+
+/* ======================= Address Section ======================= */
+.account-section {
+  background: #fff;
+  padding: clamp(14px, 2vw, 20px);
+  border-radius: 12px;
+  margin-bottom: clamp(1rem, 2vw, 2rem);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.account-section h3 {
+  margin-bottom: clamp(8px, 1.2vw, 12px);
+  font-size: clamp(1rem, 2vw, 1.2rem);
+}
+
+/* Address input & textarea */
+.account-section input[type="text"] {
+  width: 100%;
+  max-width: clamp(280px, 90%, 400px);
+  padding: clamp(6px, 1vw, 8px) clamp(10px, 1.5vw, 12px);
+  margin-bottom: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: clamp(0.85rem, 1.5vw, 0.95rem);
+  resize: vertical;
+  min-height: clamp(50px, 5vw, 70px);
+  transition: border 0.2s, box-shadow 0.2s;
+}
+
+/* Address textarea updated for wider width */
+.account-section textarea {
+  width: 100%;
+  max-width: clamp(350px, 95%, 600px);
+  /* Wider than before */
+  padding: clamp(6px, 1vw, 8px) clamp(10px, 1.5vw, 12px);
+  margin-bottom: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: clamp(0.85rem, 1.5vw, 0.95rem);
+  resize: vertical;
+  min-height: clamp(50px, 5vw, 70px);
+  transition: border 0.2s, box-shadow 0.2s;
+}
+
+.account-section textarea:focus,
+.account-section input[type="text"]:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2);
+  outline: none;
+}
+
+/* Address container layout */
+.address-info {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(6px, 1vw, 10px);
+}
+
+.address-section img {
+  width: 13px;
+  filter: invert(1);
+}
+
+@media screen and (min-width: 500px) {
+  .address-info {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .address-info textarea {
+    flex: 1;
+    margin-bottom: 0;
+  }
+}
+
+.account-section button {
+  padding: clamp(6px, 1vw, 8px) clamp(12px, 1.5vw, 16px);
+  border-radius: 6px;
+  border: none;
+  background: #111;
+  color: #fff;
+  cursor: pointer;
+  font-size: clamp(0.85rem, 1.5vw, 0.95rem);
+  transition: background 0.3s;
+}
+
+.account-section button:hover {
+  background: #333;
+}
+
+/* ======================= Orders Section ======================= */
+.orders-list {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.8rem, 2vw, 1rem);
+}
+
+.account-page .order-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  padding: clamp(12px, 2vw, 15px) clamp(16px, 2vw, 20px);
+  border-radius: 10px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.order-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.order-info h4 {
+  margin: 0;
+  font-size: clamp(0.95rem, 2vw, 1.05rem);
+  font-weight: 500;
+}
+
+.order-info p {
+  margin: 4px 0;
+  font-size: clamp(0.8rem, 1.5vw, 0.9rem);
+  color: #666;
+}
+
+.status {
+  font-weight: 600;
+  border-radius: 6px;
+  font-size: clamp(0.75rem, 1.3vw, 0.85rem);
+}
+
+.order-thumbnail {
+  width: clamp(55px, 8vw, 70px);
+  height: clamp(55px, 8vw, 70px);
+  margin-left: 15px;
+  border-radius: 8px;
+  overflow: hidden;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.order-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* View all orders button */
+.view-all-btn {
+  display: block;
+  margin: 15px auto 0;
+  padding: clamp(6px, 1vw, 8px) clamp(12px, 1.5vw, 16px);
+  border: none;
+  border-radius: 6px;
+  background: #007bff;
+  color: white;
+  font-size: clamp(0.85rem, 1.5vw, 0.95rem);
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.view-all-btn:hover {
+  background: #0056b3;
+}
+
+/* ======================= Account Settings ======================= */
+.account-settings {
+  margin-top: 20px;
+}
+
+.account-btn {
+  display: inline-block;
+  margin-right: 10px;
+  margin-bottom: 8px;
+  padding: clamp(8px, 1.2vw, 10px) clamp(12px, 1.5vw, 16px);
+  border: none;
+  border-radius: 8px;
+  background: #111;
+  color: #fff;
+  font-size: clamp(0.85rem, 1.5vw, 0.95rem);
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.account-btn:hover {
+  background: #333;
+}
+
+.account-btn.logout {
+  background: #c62828;
+}
+
+.account-btn.logout:hover {
+  background: #a91f1f;
+}
+
+/* ======================= Empty Orders ======================= */
+.empty {
+  font-size: clamp(0.85rem, 1.5vw, 0.95rem);
+  color: #777;
+  text-align: center;
+}
+
+.logout {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logout img {
+
+  width: 20px;
+  filter: invert(1);
+}
+
+.avatar-modal-content button {
+  background: #000;
+  color: #ffffff;
+  padding: clamp(8px, 1.2vw, 10px) clamp(15px, 1.5vw, 18px);
+  border: none;
+  outline: none;
+  font-size: 13px;
+  border-radius: .4rem;
+}
+
+/* ======================= Responsive Adjustments ======================= */
+@media (max-width: 1025px) {
+  .account-page {
+    margin-top: 100px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .account-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .person-info {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .person-info p {
+    font-size: 14px;
+    color: #444;
+  }
+
+  .order-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .order-thumbnail {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+
+
+  .account-section {
+    padding: 15px;
+  }
+
+  .account-header input,
+  .account-section input,
+  .account-section textarea {
+    font-size: 0.9rem;
+  }
+
+  .account-btn {
+    font-size: 0.9rem;
+    padding: 8px 14px;
+  }
+
+  .account-page,
+  .account-header,
+  .account-section {
+    border-radius: .3rem;
+  }
+
+  .account-page button {
+    border-radius: .3rem;
+  }
+
+  .account-page .order-card {
+    border-radius: .3rem;
+  }
+
+  .avatar-modal-content {
+    border-radius: .3rem;
+  }
+}

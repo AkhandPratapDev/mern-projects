@@ -1,0 +1,111 @@
+/* =========================== Header Container =========================== */
+.header {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto 3% auto;
+    overflow: hidden;
+    position: relative;
+    border-radius: 0.5rem;
+}
+
+/* =========================== Slider Contents =========================== */
+.header-contents {
+    display: flex;
+    will-change: transform;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* =========================== Header Images =========================== */
+.header-img {
+    flex: 0 0 100%;
+    width: 100%;
+    height: 32vw;
+    object-fit: cover;
+    border-radius: 0;
+}
+
+/* =========================== Dots Navigation =========================== */
+.dots {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--color-text-light);
+    /* default dot color */
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.dot.active {
+    background: var(--color-white);
+    /* active dot color */
+}
+
+/* =========================== Skeleton Loader =========================== */
+.skeleton {
+    background-color: var(--color-search-bg);
+    border-radius: 6px;
+    animation: pulse 1.5s infinite ease-in-out;
+}
+
+@keyframes pulse {
+    0% {
+        background-color: var(--color-search-bg);
+    }
+
+    50% {
+        background-color: var(--color-white);
+    }
+
+    100% {
+        background-color: var(--color-search-bg);
+    }
+}
+
+.skeleton-header {
+    width: 100%;
+    height: 32vw;
+    border-radius: 0;
+}
+
+/* =========================== Responsive Styles =========================== */
+@media (max-width: 767px) {
+    .header {
+        margin-top: 100px;
+    }
+
+    .header-img,
+    .skeleton-header {
+        height: 38vw;
+    }
+
+    .dot {
+        width: 8px;
+        height: 8px;
+    }
+}
+
+@media (max-width: 500px) {
+    .header {
+        border-radius: .3rem;
+    }
+
+    .header-img,
+    .skeleton-header {
+        height: 45vw;
+    }
+
+    .dot {
+        width: 5px;
+        height: 5px;
+    }
+
+}

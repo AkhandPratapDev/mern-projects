@@ -1,0 +1,84 @@
+/* ==================== Search Overlay ==================== */
+.search-overlay {
+  position: fixed;
+  top: 65px; /* match Navbar height */
+  left: 240px; /* match expanded sidebar width */
+  width: calc(100% - 240px); /* occupy remaining width */
+  z-index: 100;
+  background: rgb(235, 235, 235);
+  transition: left 0.3s ease, width 0.3s ease;
+}
+
+/* ==================== When Sidebar is Collapsed ==================== */
+.sidenav.collapsed ~ .layout .search-overlay {
+  left: 50px; /* collapsed sidebar width */
+  width: calc(100% - 50px);
+}
+
+/* ==================== Search Box ==================== */
+.search-box {
+  display: flex;
+  align-items: center;
+  padding: clamp(6px, 1vw, 12px) clamp(12px, 2vw, 20px);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* ==================== Search Form ==================== */
+.search-form {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.search-form input[type="search"] {
+  flex: 1;
+  padding: clamp(6px, 1vw, 10px);
+  border: none;
+  background: transparent;
+  font-size: clamp(10px, 1.5vw, 16px);
+  outline: none;
+}
+
+/* ==================== Search Button ==================== */
+.search-btn-resp {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.search-btn-resp img {
+  width: clamp(18px, 1.5vw, 20px);
+  height: clamp(18px, 1.5vw, 20px);
+}
+
+/* ==================== Close Button (optional overlay close) ==================== */
+.close-btn {
+  border: none;
+  background: none;
+  font-size: clamp(16px, 1.5vw, 20px);
+  margin-right: clamp(4px, 1vw, 8px);
+  cursor: pointer;
+  color: #555;
+}
+
+.close-btn:hover {
+  color: #000;
+}
+
+/* ==================== Responsive Adjustments ==================== */
+@media (max-width: 768px) {
+  .search-overlay {
+    left: 50px; /* smaller sidebar on mobile */
+    width: calc(100% - 50px);
+  }
+
+  .search-box {
+    padding: clamp(4px, 2vw, 8px);
+  }
+
+  .search-btn-resp img {
+    width: clamp(14px, 2vw, 18px);
+    height: clamp(14px, 2vw, 18px);
+  }
+}

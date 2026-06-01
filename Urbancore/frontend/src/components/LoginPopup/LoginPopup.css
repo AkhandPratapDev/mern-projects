@@ -1,0 +1,273 @@
+/* ==================== Background Overlay ==================== */
+.login-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* ==================== Popup Poster ==================== */
+.login-popup-poster {
+  width: 55%;
+  background: #f0f6ff;
+}
+
+/* ==================== Popup Container (Two Columns) ==================== */
+.login-container {
+  display: flex;
+  flex-direction: row;
+  background: #fff;
+  border-radius: .5rem;
+  width: 60vw;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  animation: scaleIn 0.3s ease-in-out;
+}
+
+/* ==================== Left Poster (Optional) ==================== */
+.login-poster {
+  flex: 1;
+  background: #f5f5f5;
+}
+
+.login-poster img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  min-height: clamp(150px, 25vh, 350px);
+}
+
+/* ==================== Right Form Container ==================== */
+.login-main-container {
+  flex: 1;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* ==================== Title Row ==================== */
+.login-popup-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 25px;
+}
+
+.login-popup-title h2 {
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.login-popup-title div {
+  cursor: pointer;
+  transition: transform 0.2s;
+  font-size: 20px;
+}
+
+.login-popup-title div:hover {
+  color: rgb(198, 12, 12);
+  transform: rotate(90deg);
+}
+
+/* ==================== Input Fields ==================== */
+.login-popup-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(8px, 2vw, 10px);
+}
+
+.login-popup-inputs input {
+  padding: clamp(10px, 2vw, 14px);
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  outline: none;
+  font-size: clamp(0.77rem, 1vw, 0.95rem);
+  transition: border 0.2s, box-shadow 0.2s;
+}
+.login-popup-inputs input.otp-input{
+  padding: 0 !important;
+}
+
+.login-popup-inputs input:focus {
+  border-color: #6c63ff;
+  box-shadow: 0 0 4px rgba(108, 99, 255, 0.4);
+}
+
+/* ==================== Submit Button ==================== */
+.login-main-container button {
+  background: #6c63ff;
+  color: #fff;
+  padding: clamp(5px, 2vw, 10px);
+  font-size: clamp(0.9rem, 1.2vw, 1rem);
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.login-main-container button:hover {
+  background: #5a52d4;
+}
+
+.login-main-container button:active {
+  transform: scale(0.97);
+}
+
+/* ==================== Terms & Conditions ==================== */
+.login-popup-condition {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: #555;
+}
+
+
+/* ==================== Switch Login / Sign Up Text ==================== */
+.login-main-container p {
+  font-size: clamp(0.75rem, 1vw, 0.9rem);
+  text-align: center;
+  color: #555;
+}
+
+.login-main-container span {
+  color: #6c63ff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.login-main-container span:hover {
+  color: #4a42c5;
+}
+
+/* ==================== Animations ==================== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+
+
+/* OTP input boxes */
+.otp-boxes {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-direction: row;
+}
+
+.otp-input {
+  width: clamp(30px, 5vw, 35px);
+  height: clamp(35px, 6vw, 40px);
+  text-align: center;
+  font-size: 20px;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.otp-input:focus {
+  border-color: #000;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+}
+
+
+/* ==================== Responsive: Tablets ==================== */
+@media (max-width: 1100px) {
+  .login-container {
+    width: 85vw;
+  }
+
+  .otp-input {
+    width: 30px;
+    height: 35px;
+  }
+}
+
+/* ==================== Responsive: Small Tablets / Mobiles ==================== */
+@media (max-width: 767px) {
+  .login-container {
+    flex-direction: column;
+    width: 60vw;
+  }
+
+  .login-popup-poster {
+    display: none;
+  }
+}
+
+/* ==================== Responsive: Phones ==================== */
+@media (max-width: 500px) {
+  .login-container {
+    flex-direction: column;
+    width: 80vw;
+    border-radius: .3rem;
+  }
+
+}
+
+@media (max-width: 400px) {
+  .otp-input {
+    width: 26px;
+    height: 31px;
+  }
+}
+
+
+/* ==================== Login Popup Spinner ==================== */
+.spinner {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border: 3px solid #fff;
+  border-top: 3px solid #555;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.login-container button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+

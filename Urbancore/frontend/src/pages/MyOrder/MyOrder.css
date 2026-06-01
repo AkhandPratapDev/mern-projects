@@ -1,0 +1,226 @@
+/* =============== My Orders Container =============== */
+.my-orders-container {
+  max-width: 1000px;
+  margin: clamp(20px, 5%, 2rem) auto;
+  padding: clamp(8px, 2vw, 16px);
+  font-family: "Inter", sans-serif;
+  margin-top: 130px;
+  padding-top: 0;
+}
+
+/* =============== Page Title =============== */
+.page-title {
+  text-align: center;
+  margin-bottom: clamp(1.5rem, 3vw, 2rem);
+  font-size: clamp(1.5rem, 4vw, 1.8rem);
+  color: #333;
+}
+
+/* =============== Loading & Empty Messages =============== */
+.loading-msg,
+.empty-msg {
+  text-align: center;
+  margin-top: clamp(2rem, 5vw, 3rem);
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  color: #777;
+}
+
+/* =============== Order Card =============== */
+.order-card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: .5rem;
+  padding: clamp(12px, 2vw, 20px);
+  margin-bottom: clamp(1.5rem, 3vw, 2rem);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.order-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* =============== Order Header =============== */
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: clamp(8px, 1.5vw, 1rem);
+  border-bottom: 1px solid #eee;
+  padding-bottom: clamp(6px, 1vw, 0.8rem);
+  width: 100%;
+}
+
+/* =============== Order Info =============== */
+.order-info-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: clamp(10px, 2vw, 20px);
+}
+
+.order-id {
+  margin: 0;
+  font-size: clamp(.8rem, 2.5vw, 1.1rem);
+  color: #222;
+}
+
+.order-date {
+  font-size: clamp(0.68rem, 2vw, 0.9rem);
+  color: #888;
+}
+
+.order-info {
+  font-size: clamp(0.85rem, 2vw, 0.95rem);
+  line-height: 1.6;
+  color: #444;
+}
+
+/* =============== Order Items Grid =============== */
+.order-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(clamp(180px, 25%, 220px), 1fr));
+  gap: clamp(8px, 2vw, 1rem);
+  margin-top: clamp(8px, 2vw, 12px);
+}
+
+/* =============== Order Item Card =============== */
+.order-item-card {
+  display: flex;
+  gap: clamp(6px, 1.5vw, 0.8rem);
+  align-items: flex-start;
+  background: #fafafa;
+  border-radius: .5rem;
+  padding: clamp(6px, 1.5vw, 0.8rem);
+  transition: background 0.2s, transform 0.2s;
+}
+
+.order-item-card:hover {
+  background: #f0f0f0;
+  transform: translateY(-1px);
+}
+
+.order-item-img {
+  width: clamp(55px, 8vw, 70px);
+  height: clamp(55px, 8vw, 70px);
+  object-fit: cover;
+  border-radius: 6px;
+  cursor: pointer;
+  border: 1px solid #ddd;
+}
+
+.order-item-details h5 {
+  margin: 0 0 clamp(3px, 0.8vw, 0.3rem);
+  font-size: clamp(0.95rem, 2vw, 1rem);
+  color: #333;
+}
+
+.order-item-details p {
+  margin: clamp(2px, 0.5vw, 0.2rem) 0;
+  font-size: clamp(0.8rem, 1.8vw, 0.9rem);
+  color: #555;
+}
+
+/* =============== Track Button =============== */
+.track-btn {
+  background: #007bff;
+  color: #fff;
+  border: none;
+  padding: clamp(6px, 1vw, 8px) clamp(10px, 3vw, 12px);
+  border-radius: .3rem;
+  cursor: pointer;
+  transition: background 0.2s;
+  font-size: clamp(0.85rem, 2vw, 0.95rem);
+  display: flex;
+}
+
+.track-btn img {
+  width: 25px;
+  gap: 5px;
+  display: none;
+}
+
+.track-btn:hover {
+  background: #0056b3;
+}
+
+/* =============== Fade In Animation =============== */
+.fade-in {
+  animation: fadeIn 0.4s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(clamp(4px, 1vw, 6px));
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =============== Responsive (Tablet) =============== */
+@media (max-width: 1025px) {
+  .my-orders-container {
+    margin-top: 100px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .order-header {
+    align-items: flex-start;
+    gap: clamp(4px, 1vw, 8px);
+  }
+
+  .order-info-item {
+    flex-direction: column-reverse;
+    align-items: normal;
+  }
+
+  .order-items {
+    grid-template-columns: 1fr;
+  }
+
+  .track-btn {
+    padding: 5px;
+    font-size: 0;
+  }
+
+  .track-btn img {
+    display: block;
+  }
+}
+
+/* =============== Responsive (Mobile) =============== */
+
+@media screen and (max-width: 480px) {
+  .order-card {
+    padding: clamp(8px, 2vw, 12px);
+    margin-bottom: clamp(12px, 3vw, 16px);
+  }
+
+  .order-item-img {
+    width: clamp(45px, 12vw, 55px);
+    height: clamp(45px, 12vw, 55px);
+    border-radius: .3rem;
+  }
+
+  .order-item-details h5 {
+    font-size: clamp(0.8rem, 3vw, 0.9rem);
+  }
+
+  .order-item-details p,
+  .order-info p {
+    font-size: clamp(0.75rem, 2.5vw, 0.85rem);
+  }
+
+  .track-btn img {
+    width: 20px;
+  }
+}
